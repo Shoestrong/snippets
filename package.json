@@ -4,10 +4,13 @@
   "description": "代码片段",
   "author": "shoestrong",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "deploy": "./deploy.sh",
+    "ghpages": "node ghpages.js"
   },
   "devDependencies": {
+    "gh-pages": "^1.2.0",
     "vuepress": "^0.10.1"
   },
   "bugs": {
