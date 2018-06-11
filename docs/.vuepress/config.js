@@ -7,7 +7,7 @@ module.exports = {
     ],
     host: '0.0.0.0',                                // 主机
     port: 8020,                                     // 端口
-    dest: '.vuepress/dist',                         // vuepress build 的输出目录
+    dest: 'dist',                                   // vuepress build 的输出目录
     ga: '',                                         // 谷歌统计
     serviceWorker: false,                           // 用于PWA，需https下才能开通
     locales: undefined,                             // 多语言支持
