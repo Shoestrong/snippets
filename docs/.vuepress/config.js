@@ -1,7 +1,7 @@
 module.exports = {
-    base: '/',                                      // 部署站点的基础路径
-    title: 'snippets',                              // 网站的标题
-    description: '代码片段收集',                      // 网站的描述
+    base: '/snippets/',                                      // 部署站点的基础路径
+    title: '码上收集',                              // 网站的标题
+    description: '码上收集 - 代码片段收集',                      // 网站的描述
     head: [                                         // head标签
         ['link', { rel: 'icon', href: '/favicon.ico' }]
     ],
@@ -13,6 +13,7 @@ module.exports = {
     locales: undefined,                             // 多语言支持
     theme: undefined,                               // 主题
     themeConfig: {                                  // 主题配置
+        logo: '/logo.png',
         nav: [
             { text: '主页', link: '/' },
             { text: 'Javascript', link: '/javascript/' },
