@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /logo.png
-actionText: 开始偷窥
+actionText: 开始阅读
 actionLink: /javascript/
 meta:
   - name: description
