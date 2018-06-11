@@ -11,7 +11,7 @@ module.exports = {
     ga: '',                                         // 谷歌统计
     serviceWorker: false,                           // 用于PWA，需https下才能开通
     locales: undefined,                             // 多语言支持
-    theme: undefined,                               // 主题
+    theme: undefined,                                    // 主题
     themeConfig: {                                  // 主题配置
         logo: '/logo.png',
         nav: [
