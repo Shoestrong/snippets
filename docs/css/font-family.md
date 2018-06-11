@@ -1,5 +1,6 @@
 ---
 title: '中文字体font-family设置'
+lang: zh-CN
 ---
 
 ```

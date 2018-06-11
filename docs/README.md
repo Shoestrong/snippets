@@ -1,4 +1,5 @@
 ---
+lang: zh-CN
 home: true
 heroImage: /logo.png
 actionText: 开始阅读
