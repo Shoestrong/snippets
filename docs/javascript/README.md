@@ -4,4 +4,4 @@ title: javascript 片段
 ---
 # 目录
 
-[驼峰](/javascript/camelize.md)
+[连字符分隔转化驼峰](/javascript/camelize.md)
