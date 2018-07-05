@@ -1,5 +1,5 @@
 module.exports = {
-    base: '/snippets/',                                      // 部署站点的基础路径
+    base: '/',                                      // 部署站点的基础路径
     title: '码上收集',                              // 网站的标题
     description: '代码片段，写入收集！',                      // 网站的描述
     head: [                                         // head标签
