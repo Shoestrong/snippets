@@ -22,7 +22,9 @@ module.exports = {
         sidebar: {
             '/javascript/': [
                 'camelize',
-                'checkGlobalVar'
+                'checkGlobalVar',
+                'timestampFormat',
+                'getUrlQuery',
             ],
             '/css/': [
                 'font-family'
