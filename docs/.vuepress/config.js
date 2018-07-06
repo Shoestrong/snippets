@@ -21,7 +21,8 @@ module.exports = {
         ],
         sidebar: {
             '/javascript/': [
-                'camelize'
+                'camelize',
+                'checkGlobalVar'
             ],
             '/css/': [
                 'font-family'
