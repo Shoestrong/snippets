@@ -24,7 +24,7 @@ module.exports = {
                 'verification',
                 'event',
                 'camelize',
-                'throttle&debounce',
+                'throttle-debounce',
                 'checkGlobalVar',
                 'timestampFormat',
                 'getUrlQuery'
