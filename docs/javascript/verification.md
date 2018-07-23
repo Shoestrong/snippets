@@ -1,5 +1,5 @@
 ---
-title: Javascript 常用验证
+title: 'Javascript 常用验证'
 lang: zh-CN
 ---
 
