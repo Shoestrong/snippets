@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>垂直水平居中 | 码上收集</title>
+    <meta name="description" content="代码片段，写入收集！">
+    <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/12.styles.29a311f3.css" as="style"><link rel="preload" href="/assets/js/app.4726a254.js" as="script"><link rel="preload" href="/assets/js/8.1de8a133.js" as="script"><link rel="prefetch" href="/assets/js/7.32a695bd.js"><link rel="prefetch" href="/assets/js/1.bf48cce9.js"><link rel="prefetch" href="/assets/js/2.8cdd6818.js"><link rel="prefetch" href="/assets/js/3.ae2c4818.js"><link rel="prefetch" href="/assets/js/4.53f631b9.js"><link rel="prefetch" href="/assets/js/5.7d764d29.js"><link rel="prefetch" href="/assets/js/6.fd4b2cf6.js"><link rel="prefetch" href="/assets/js/0.22f6007d.js"><link rel="prefetch" href="/assets/js/9.8d9ddbc9.js"><link rel="prefetch" href="/assets/js/10.5b402a67.js"><link rel="prefetch" href="/assets/js/11.262e5927.js">
+    <link rel="stylesheet" href="/assets/css/12.styles.29a311f3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/" class="home-link router-link-active"><img src="/logo.png" class="logo"><span class="site-name can-hide">
+      码上收集
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">主页</a></div><div class="nav-item"><a href="/javascript/" class="nav-link">Javascript</a></div><div class="nav-item"><a href="/css/" class="nav-link router-link-active">CSS</a></div><!----></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">主页</a></div><div class="nav-item"><a href="/javascript/" class="nav-link">Javascript</a></div><div class="nav-item"><a href="/css/" class="nav-link router-link-active">CSS</a></div><!----></nav><ul class="sidebar-links"><li><a href="/css/font-family.html" class="sidebar-link">中文字体font-family设置</a></li><li><a href="/css/vh-center.html" class="active sidebar-link">垂直水平居中</a></li></ul></div><div class="page"><div class="content"><div class="language-html extra-class"><pre class="language-html"><code><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>垂直水平居中<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style language-css">
+        <span class="token selector">*</span><span class="token punctuation">{</span><span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span><span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span><span class="token punctuation">}</span>
+        <span class="token selector">.parents</span><span class="token punctuation">{</span><span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span><span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span><span class="token punctuation">}</span>
+        <span class="token selector">.parents:nth-child(odd)</span><span class="token punctuation">{</span><span class="token property">background-color</span><span class="token punctuation">:</span> #ccc<span class="token punctuation">;</span><span class="token punctuation">}</span>
+        <span class="token selector">.child</span><span class="token punctuation">{</span><span class="token property">width</span><span class="token punctuation">:</span> 180px<span class="token punctuation">;</span><span class="token property">height</span><span class="token punctuation">:</span> 80px<span class="token punctuation">;</span><span class="token property">background-color</span><span class="token punctuation">:</span> #aaa<span class="token punctuation">;</span><span class="token property">box-shadow</span><span class="token punctuation">:</span> 0 0 10px <span class="token function">rgba</span><span class="token punctuation">(</span>0,0,0,.8<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token property">border</span><span class="token punctuation">:</span>1px solid #ccc<span class="token punctuation">;</span><span class="token property">border-radius</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span><span class="token property">padding</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span><span class="token punctuation">}</span>
+        <span class="token selector">.parentsBox1</span><span class="token punctuation">{</span>
+            <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector">.childBox1</span><span class="token punctuation">{</span>
+            <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+            <span class="token property">top</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+            <span class="token property">left</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+            <span class="token property">margin-top</span><span class="token punctuation">:</span> -50px<span class="token punctuation">;</span>
+            <span class="token property">margin-left</span><span class="token punctuation">:</span> -100px<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector">.parentsBox2</span><span class="token punctuation">{</span>
+            <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector">.childBox2</span><span class="token punctuation">{</span>
+            <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+            <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+            <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+            <span class="token property">right</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+            <span class="token property">bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+            <span class="token property">margin</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector">.parentsBox3</span><span class="token punctuation">{</span>
+            <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector">.childBox3</span><span class="token punctuation">{</span>
+            <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+            <span class="token property">top</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+            <span class="token property">left</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+            <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-50%,-50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector">.parentsBox4</span><span class="token punctuation">{</span>
+            <span class="token property">display</span><span class="token punctuation">:</span> table<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector">.childBox4</span><span class="token punctuation">{</span>
+            <span class="token property">display</span><span class="token punctuation">:</span> table-cell<span class="token punctuation">;</span>
+            <span class="token property">vertical-align</span><span class="token punctuation">:</span> middle<span class="token punctuation">;</span>
+            <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector">.parentsBox5</span><span class="token punctuation">{</span>
+            <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+            <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+            <span class="token property">align-items</span><span class="token punctuation">:</span>center<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector">.childBox5</span><span class="token punctuation">{</span>
+            
+        <span class="token punctuation">}</span>
+        <span class="token selector">.parentsBox6</span><span class="token punctuation">{</span>
+            <span class="token property">text-align</span><span class="token punctuation">:</span>center<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector">.childBox6</span><span class="token punctuation">{</span>
+            <span class="token property">display</span><span class="token punctuation">:</span>inline-block<span class="token punctuation">;</span>
+            <span class="token property">vertical-align</span><span class="token punctuation">:</span>middle<span class="token punctuation">;</span>
+            <span class="token property">text-align</span><span class="token punctuation">:</span>left<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector">.vamb</span><span class="token punctuation">{</span>
+            <span class="token property">display</span><span class="token punctuation">:</span>inline-block<span class="token punctuation">;</span>
+            <span class="token property">height</span><span class="token punctuation">:</span>100%<span class="token punctuation">;</span>
+            <span class="token property">vertical-align</span><span class="token punctuation">:</span>middle<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>parents parentsBox1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>child childBox1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>定位和需要定位的元素的margin减去宽高的一半<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>parents parentsBox2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>child childBox2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>定位和margin:auto<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>parents parentsBox3<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>child childBox3<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>定位和transfrom<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>parents parentsBox4<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>child childBox4<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>diplay：table-cell<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>parents parentsBox5<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>child childBox5<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>flexBox居中<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>parents parentsBox6<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>b</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>vamb<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>b</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>child childBox6<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            宽高不定<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span>
+            垂直水平居中
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></div><div class="page-edit"><!----><!----></div><div class="page-nav"><p class="inner"><span class="prev">
+        ← <a href="/css/font-family.html" class="prev">
+          中文字体font-family设置
+        </a></span><!----></p></div></div></div></div>
+    <script src="/assets/js/8.1de8a133.js" defer></script><script src="/assets/js/app.4726a254.js" defer></script>
+  </body>
+</html>

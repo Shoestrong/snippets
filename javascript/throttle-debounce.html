@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>节流与去抖 | 码上收集</title>
+    <meta name="description" content="代码片段，写入收集！">
+    <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/12.styles.29a311f3.css" as="style"><link rel="preload" href="/assets/js/app.4726a254.js" as="script"><link rel="preload" href="/assets/js/2.8cdd6818.js" as="script"><link rel="prefetch" href="/assets/js/7.32a695bd.js"><link rel="prefetch" href="/assets/js/1.bf48cce9.js"><link rel="prefetch" href="/assets/js/3.ae2c4818.js"><link rel="prefetch" href="/assets/js/4.53f631b9.js"><link rel="prefetch" href="/assets/js/5.7d764d29.js"><link rel="prefetch" href="/assets/js/6.fd4b2cf6.js"><link rel="prefetch" href="/assets/js/0.22f6007d.js"><link rel="prefetch" href="/assets/js/8.1de8a133.js"><link rel="prefetch" href="/assets/js/9.8d9ddbc9.js"><link rel="prefetch" href="/assets/js/10.5b402a67.js"><link rel="prefetch" href="/assets/js/11.262e5927.js">
+    <link rel="stylesheet" href="/assets/css/12.styles.29a311f3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/" class="home-link router-link-active"><img src="/logo.png" class="logo"><span class="site-name can-hide">
+      码上收集
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">主页</a></div><div class="nav-item"><a href="/javascript/" class="nav-link router-link-active">Javascript</a></div><div class="nav-item"><a href="/css/" class="nav-link">CSS</a></div><!----></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">主页</a></div><div class="nav-item"><a href="/javascript/" class="nav-link router-link-active">Javascript</a></div><div class="nav-item"><a href="/css/" class="nav-link">CSS</a></div><!----></nav><ul class="sidebar-links"><li><a href="/javascript/verification.html" class="sidebar-link">Javascript 常用验证</a></li><li><a href="/javascript/event.html" class="sidebar-link">Javascript 事件处理</a></li><li><a href="/javascript/camelize.html" class="sidebar-link">连字符分隔转化驼峰</a></li><li><a href="/javascript/throttle-debounce.html" class="active sidebar-link">节流与去抖</a></li><li><a href="/javascript/checkGlobalVar.html" class="sidebar-link">检测页面全局变量脚本</a></li><li><a href="/javascript/timestampFormat.html" class="sidebar-link">时间戳格式化</a></li><li><a href="/javascript/getUrlQuery.html" class="sidebar-link">获取url参数转化为对象</a></li></ul></div><div class="page"><div class="content"><div class="language- extra-class"><pre class="language-text"><code>//节流
+funtion throttle(func, wait) {　　
+    var lastTime = 0,
+        timeout;　　
+    return funtion() {　　　　
+        var context = this,
+            args = arguments,
+            delay = wait || 100,
+            now = new Date().getTime();　　　　
+        if (now - lastTime &lt;= delay) {　　　　　　
+            return;　　　　
+        }　　　　
+        lastTime = now;
+        clearTimeout(timeout);　　
+        timeout = setTimeout(function() {
+            timeout = null;
+            func.apply(context, args);
+        }, delay)　　
+    }
+}
+// 去抖
+function debounce(func, wait) {
+    var timeout;
+    return function() {
+        var context = this,
+            args = arguments,
+            delay = wait || 250;
+        clearTimeout(timeout);
+        timeout = setTimeout(function() {
+            timeout = null;
+            func.apply(context, args);
+        }, delay);
+    };
+}
+
+
+// Demo
+//我们先来个节流,每秒输出一次
+window.onscroll=function(){
+    if(window.onScrollTag == undefined){
+        window.onScrollTag=true;
+        console.log(new Date());
+        setTimeout(function(){
+            window.onScrollTag=undefined;
+        },1000);
+    }
+}//先触发
+window.onscroll=function(){
+    if(window.onScrollTag == undefined){
+        window.onScrollTag=setTimeout(function(){
+            window.onScrollTag=undefined;
+            console.log(new Date());
+        },1000);
+    }
+}//后触发
+//从上面的代码可以看出来，我们在一个事件执行的时候就把标记改成不可用。一秒后才可以再次触发操作。
+//我们在尝试一下去抖
+window.onscroll=function(){
+    if(window.onScrollTag != undefined){
+        clearTimeout(window.onScrollTag);
+    }
+    window.onScrollTag=setTimeout(function(){
+        console.log(new Date());
+    },1000);
+}//消抖，消除抖动，感觉这个更好听
+</code></pre></div></div><div class="page-edit"><!----><!----></div><div class="page-nav"><p class="inner"><span class="prev">
+        ← <a href="/javascript/camelize.html" class="prev">
+          连字符分隔转化驼峰
+        </a></span><span class="next"><a href="/javascript/checkGlobalVar.html">
+          检测页面全局变量脚本
+        </a> →
+      </span></p></div></div></div></div>
+    <script src="/assets/js/2.8cdd6818.js" defer></script><script src="/assets/js/app.4726a254.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>连字符分隔转化驼峰 | 码上收集</title>
+    <meta name="description" content="代码片段，写入收集！">
+    <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/12.styles.29a311f3.css" as="style"><link rel="preload" href="/assets/js/app.4726a254.js" as="script"><link rel="preload" href="/assets/js/6.fd4b2cf6.js" as="script"><link rel="prefetch" href="/assets/js/7.32a695bd.js"><link rel="prefetch" href="/assets/js/1.bf48cce9.js"><link rel="prefetch" href="/assets/js/2.8cdd6818.js"><link rel="prefetch" href="/assets/js/3.ae2c4818.js"><link rel="prefetch" href="/assets/js/4.53f631b9.js"><link rel="prefetch" href="/assets/js/5.7d764d29.js"><link rel="prefetch" href="/assets/js/0.22f6007d.js"><link rel="prefetch" href="/assets/js/8.1de8a133.js"><link rel="prefetch" href="/assets/js/9.8d9ddbc9.js"><link rel="prefetch" href="/assets/js/10.5b402a67.js"><link rel="prefetch" href="/assets/js/11.262e5927.js">
+    <link rel="stylesheet" href="/assets/css/12.styles.29a311f3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/" class="home-link router-link-active"><img src="/logo.png" class="logo"><span class="site-name can-hide">
+      码上收集
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">主页</a></div><div class="nav-item"><a href="/javascript/" class="nav-link router-link-active">Javascript</a></div><div class="nav-item"><a href="/css/" class="nav-link">CSS</a></div><!----></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">主页</a></div><div class="nav-item"><a href="/javascript/" class="nav-link router-link-active">Javascript</a></div><div class="nav-item"><a href="/css/" class="nav-link">CSS</a></div><!----></nav><ul class="sidebar-links"><li><a href="/javascript/verification.html" class="sidebar-link">Javascript 常用验证</a></li><li><a href="/javascript/event.html" class="sidebar-link">Javascript 事件处理</a></li><li><a href="/javascript/camelize.html" class="active sidebar-link">连字符分隔转化驼峰</a></li><li><a href="/javascript/throttle-debounce.html" class="sidebar-link">节流与去抖</a></li><li><a href="/javascript/checkGlobalVar.html" class="sidebar-link">检测页面全局变量脚本</a></li><li><a href="/javascript/timestampFormat.html" class="sidebar-link">时间戳格式化</a></li><li><a href="/javascript/getUrlQuery.html" class="sidebar-link">获取url参数转化为对象</a></li></ul></div><div class="page"><div class="content"><div class="language- extra-class"><pre class="language-text"><code>/**
+ * camelize 连字符分隔转化驼峰，符号-或者_
+ * @params:String str: 要转化的字符串
+ * @return:String 转化为的字符串
+ */
+export const camelize = (str)=&gt; {
+    return str.replace(/(-|_)\w/g, _ =&gt; _ ? _.substr(1).toUpperCase() : '');
+}
+</code></pre></div></div><div class="page-edit"><!----><!----></div><div class="page-nav"><p class="inner"><span class="prev">
+        ← <a href="/javascript/event.html" class="prev">
+          Javascript 事件处理
+        </a></span><span class="next"><a href="/javascript/throttle-debounce.html">
+          节流与去抖
+        </a> →
+      </span></p></div></div></div></div>
+    <script src="/assets/js/6.fd4b2cf6.js" defer></script><script src="/assets/js/app.4726a254.js" defer></script>
+  </body>
+</html>

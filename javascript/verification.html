@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Javascript 常用验证 | 码上收集</title>
+    <meta name="description" content="代码片段，写入收集！">
+    <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/12.styles.29a311f3.css" as="style"><link rel="preload" href="/assets/js/app.4726a254.js" as="script"><link rel="preload" href="/assets/js/0.22f6007d.js" as="script"><link rel="prefetch" href="/assets/js/7.32a695bd.js"><link rel="prefetch" href="/assets/js/1.bf48cce9.js"><link rel="prefetch" href="/assets/js/2.8cdd6818.js"><link rel="prefetch" href="/assets/js/3.ae2c4818.js"><link rel="prefetch" href="/assets/js/4.53f631b9.js"><link rel="prefetch" href="/assets/js/5.7d764d29.js"><link rel="prefetch" href="/assets/js/6.fd4b2cf6.js"><link rel="prefetch" href="/assets/js/8.1de8a133.js"><link rel="prefetch" href="/assets/js/9.8d9ddbc9.js"><link rel="prefetch" href="/assets/js/10.5b402a67.js"><link rel="prefetch" href="/assets/js/11.262e5927.js">
+    <link rel="stylesheet" href="/assets/css/12.styles.29a311f3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/" class="home-link router-link-active"><img src="/logo.png" class="logo"><span class="site-name can-hide">
+      码上收集
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">主页</a></div><div class="nav-item"><a href="/javascript/" class="nav-link router-link-active">Javascript</a></div><div class="nav-item"><a href="/css/" class="nav-link">CSS</a></div><!----></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">主页</a></div><div class="nav-item"><a href="/javascript/" class="nav-link router-link-active">Javascript</a></div><div class="nav-item"><a href="/css/" class="nav-link">CSS</a></div><!----></nav><ul class="sidebar-links"><li><a href="/javascript/verification.html" class="active sidebar-link">Javascript 常用验证</a></li><li><a href="/javascript/event.html" class="sidebar-link">Javascript 事件处理</a></li><li><a href="/javascript/camelize.html" class="sidebar-link">连字符分隔转化驼峰</a></li><li><a href="/javascript/throttle-debounce.html" class="sidebar-link">节流与去抖</a></li><li><a href="/javascript/checkGlobalVar.html" class="sidebar-link">检测页面全局变量脚本</a></li><li><a href="/javascript/timestampFormat.html" class="sidebar-link">时间戳格式化</a></li><li><a href="/javascript/getUrlQuery.html" class="sidebar-link">获取url参数转化为对象</a></li></ul></div><div class="page"><div class="content"><div class="language- extra-class"><pre class="language-text"><code>// JavaScript Document
+//                            _ooOoo_
+//                           o8888888o
+//                           88&quot; . &quot;88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                .&quot;&quot; '&lt; `.___\_&lt;|&gt;_/___.' &gt;'&quot;&quot;.
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//
+//         .............................................
+//                  佛祖保佑             永无BUG
+/** 【原创】常用JS验证类库 **/
+var Common={
+    /**
+     * 检查输入字符串是否为空或者全部都是空格
+     * @param  str 需要验证的字符串
+     * @return bool
+     */
+    'isNull' : function(str) {
+        if ( str == &quot;&quot; ) return true;
+        var reg_str = &quot;^[ ]+$&quot;;
+        return reg_str.test(str);
+    },
+    /**
+     * 验证是否为合法的手机号
+     * @param mobile  手机号
+     * @param reg_exp [非必传]验证规则【因为电话号码的规则有可能改，所以这个是一个参数】
+     * @return bool
+     */
+    'isMobile' : function(mobile) {
+        var reg_exp = arguments[1] ? arguments[1] : /^(((1[34578]{1}))+\d{9})$/;
+        if (mobile.length == 0) {
+            return false;
+        }
+        if (mobile.length != 11) {
+            return false;
+        }
+        return reg_exp.test(mobile);
+    },
+    /**
+     * 验证是否是合法的邮箱
+     * @param email   邮箱地址
+     * @param reg_exp [非必传]验证规则【如果有特殊需求，可以自定义规则】
+     * @return bool
+     */
+    'isEmail' : function(email) {
+        var reg_exp = arguments[1] ? arguments[1] : /^([\.a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
+        if (email.length == 0) {
+            return false;
+        }
+        return reg_exp.test(email);
+    },
+    /**
+     * 验证是否是合法的固定电话
+     * @param phone 固定电话
+     * @return bool
+     */
+    'isPhone' : function(phone) {
+        var reg_exp = /^(([0\+]\d{2,3}-)?(0\d{2,3})-)?(\d{7,8})(-(\d{3,}))?$/;
+        if (phone == &quot;&quot;) {
+            return false;
+        }
+        return reg_exp.test(phone);
+    },
+    /**
+     * 验证是否是邮编
+     * @param postcode 邮编
+     * @return bool
+     */
+    'isPostcode' : function(postcode) {
+        var reg_exp = /^\d{6}$/;
+        if (postcode == &quot;&quot;) {
+            return false;
+        }
+        return reg_exp.test(postcode);
+    },
+    /**
+     * 验证是由0-9组成的数字不能有小数点
+     * @param number 数字
+     * @return bool
+     */
+    'isNumber' : function(number) {
+        var reg_exp = /^[0-9]+$/;
+        if (number == &quot;&quot;) {
+            return false;
+        }
+        return reg_exp.test(number);
+    },
+    /**
+     * 验证是由0-9组成的数字可以能有小数点并且保留2位
+     * @param double_number 数字
+     * @return bool
+     */
+    'isDoubleNumber' : function(double_number) {
+        var reg_exp = /^[0-9]+(\.\d{2})?$/;
+        if (double_number == &quot;&quot;) {
+            return false;
+        }
+        return reg_exp.test(double_number);
+    },
+    /**
+     * 验证是否是中文
+     * @param str 字符串
+     * @return bool
+     */
+    'isChinese' : function(str) {
+        var reg_exp = /^[\u0391-\uFFE5]+$/;
+        if (str == &quot;&quot;) {
+            return false;
+        }
+        return reg_exp.test(str);
+    },
+    /**
+     * 验证是否是iPhone
+     * @return bool
+     */
+    'isIphone' : function(){
+        var u = navigator.userAgent.toLowerCase();
+        return (RegExp(&quot;iphone&quot;).test(u) || RegExp(&quot;ipod touch&quot;).test(u))
+    },
+    /**
+     * 验证是否是iPad
+     * @return bool
+     */
+    'isIpad' : function(){
+        return RegExp(&quot;ipad&quot;).test(u)
+    },
+    /**
+     * 验证是否是Android
+     * @return bool
+     */
+    'isAndroid' : function(){
+        return (RegExp(&quot;android&quot;).test(u) || RegExp(&quot;android 2&quot;).test(u))
+    },
+    /**
+     * 验证是否是移动端
+     * @return bool
+     */
+    'isMB' : function(){
+        return (util.isIphone() || util.isIpad() || util.isAndroid())
+    }
+};
+</code></pre></div></div><div class="page-edit"><!----><!----></div><div class="page-nav"><p class="inner"><!----><span class="next"><a href="/javascript/event.html">
+          Javascript 事件处理
+        </a> →
+      </span></p></div></div></div></div>
+    <script src="/assets/js/0.22f6007d.js" defer></script><script src="/assets/js/app.4726a254.js" defer></script>
+  </body>
+</html>
