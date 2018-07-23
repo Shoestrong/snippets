@@ -21,13 +21,17 @@ module.exports = {
         ],
         sidebar: {
             '/javascript/': [
+                'verification',
+                'event',
                 'camelize',
+                'throttle&debounce',
                 'checkGlobalVar',
                 'timestampFormat',
-                'getUrlQuery',
+                'getUrlQuery'
             ],
             '/css/': [
-                'font-family'
+                'font-family',
+                'vh-center'
             ]
         }
     }                                
