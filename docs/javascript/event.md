@@ -1,5 +1,5 @@
 ---
-title: Javascript 事件处理
+title: 'Javascript 事件处理'
 lang: zh-CN
 ---
 
