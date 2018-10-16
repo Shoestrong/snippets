@@ -1,4 +1,4 @@
-# 代码片段收集
+# code-snippets 代码片段收集
 
 代码片段收集文档，收集一些常用的JavaScript、CSS等片段
 
