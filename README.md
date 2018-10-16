@@ -1,6 +1,6 @@
 # code-snippets 代码片段收集
 
-#### 代码片段收集文档，收集一些常用的JavaScript、CSS等片段
+代码片段收集文档，收集一些常用的JavaScript、CSS等片段
 
 ## 项目运行
 
